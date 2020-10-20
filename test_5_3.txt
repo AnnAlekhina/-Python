@@ -1,0 +1,5 @@
+Ivanov  50000
+Petrov 60000
+Sidorov 10000
+Morozov 5000
+Savchenko 100000

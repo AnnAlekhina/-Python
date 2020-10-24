@@ -1,3 +1,6 @@
+from time import sleep
+
+
 class Car:
     def __init__(self, speed: int, color, name, is_police: bool):
         self.speed = speed
@@ -54,28 +57,29 @@ class PoliceCar(Car):
                 return f'я догнал {car_name} и оштрафовал. '
             return f'Нарушитель  {car_name} оказался слишком шустрым'
         elif isinstance(car_odj, SportCar):
+            sleep(1)
             return f'Все равно не догоню спортивную {car_name}, даже не буд пытаться проверить скорость'
         else:
             return f'{car_name} едет с допустимой скоростью'
 
 
-
-car1 = Car(40, 'Желтая', 'Mazda', False)
+name = input('Введите марку машины: ')
+car1 = Car(40, 'Желтая', name, False)
 print(car1.go())
 direcrion = input('Куда повернем? ')
 print(car1.turn(direcrion))
 print(car1.show_speed())
 print(car1.stop())
-speed = int(input('С какой скоростью поедет TownCar?'))
-car2 = TownCar(speed, 'Cиняя', 'KIA', False)
+name = input('Введите марку машины: ')
+speed = int(input(f'С какой скоростью поедет {name} TownCar: '))
+car2 = TownCar(speed, 'Cиняя', name, False)
 print(car2.show_speed())
-speed = int(input('С какой скоростью поедет SportCar?'))
-car3 = SportCar(speed, 'Красная', 'Молния Маккуин', False)
+name = input('Введите марку машины: ')
+speed = int(input(f'С какой скоростью поедет {name} SportCar: '))
+car3 = SportCar(speed, 'Красная', name, False)
 print(car3.check_speed(car1.speed, car1.name))
-speed = int(input('С какой скоростью поедет PoliceCar?'))
+speed = int(input('С какой скоростью поедет Полицейская Машина?: '))
 car4 = PoliceCar(speed, 'Белая', 'какая-то мусорская', True)
 print(car4.check_speed(car2.speed, car2, car2.name))
 print(car4.check_speed(car3.speed, car3, car3.name))
-car5 = WorkCar(50, 'Белая', 'KIA', False)
-print(car5.show_speed())
 

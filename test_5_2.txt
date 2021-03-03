@@ -1,0 +1,4 @@
+zero
+first string
+second amazing string
+third super amazing string
